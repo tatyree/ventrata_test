@@ -7,12 +7,14 @@ capybara-*.html
 /public/system
 /coverage/
 /spec/tmp
+/spec/dummy/tmp
 *.orig
 rerun.txt
 pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/spec/dummy/log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep

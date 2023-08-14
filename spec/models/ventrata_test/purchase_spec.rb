@@ -22,5 +22,44 @@ module VentrataTest
         described_class.create(valid_attributes)
       end
     end
+
+    context '#card_payment' do
+      subject(:purchase) { described_class.create(valid_attributes) }
+      let(:amount) { valid_attributes[:amount] }
+      let(:clientSecret) { 'p_1GG1qyCgIN4MRzgjHrJygury_secret_PW4yD18qsNpU1Gz8etftPCZDM' }
+      let(:currency) { valid_attributes[:currency] }
+      let(:id) { 'pi_1GG1qyCgIN4MRzgjHrJygury' }
+      let(:publishableKey) { 'pk_test_f2FFE5An5Z0oMyxjlYgFRtdO' }
+
+      before do
+        expect(Stripe::PaymentIntent).to receive(:create).and_return(
+          {
+            id: id,
+            publishableKey: publishableKey,
+            clientSecret: clientSecret,
+            amount: amount,
+            currency: currency,
+          }
+        )
+      end
+
+      it 'returns an object based on the Stripe response' do
+        expect(purchase.stripe_card_payment).to eq(
+          {
+            gateway: "stripe",
+            stripe: {
+              version: "latest",
+              paymentIntent: {
+                id: ,
+                publishableKey:,
+                clientSecret:,
+                amount:,
+                currency:,
+              }
+            }
+          }
+        )
+      end
+    end
   end
 end

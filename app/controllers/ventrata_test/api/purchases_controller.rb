@@ -4,7 +4,7 @@ module VentrataTest
       @api_purchase = Purchase.new(api_purchase_params)
 
       if @api_purchase.save
-        render json: @api_purchase, status: :created #, location: @api_purchase
+        render json: @api_purchase.stripe_card_payment, status: :created
       else
         render json: @api_purchase.errors, status: :unprocessable_entity
       end

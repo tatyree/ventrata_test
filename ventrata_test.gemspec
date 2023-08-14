@@ -19,10 +19,9 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", ">= 7.0.7"
-  spec.add_dependency 'pg', '~> 1.5', '>= 1.5.3'
-  spec.add_dependency 'stripe', '~> 8.6'
+  spec.add_dependency "pg", "~> 1.5", ">= 1.5.3"
+  spec.add_dependency "stripe", "~> 8.6"
 
-  spec.add_development_dependency "dotenv-rails", "~> 2.8"
   spec.add_development_dependency "rspec-rails", "~> 6.0"
   spec.add_development_dependency "shoulda-matchers", "~> 5.0"
   spec.add_development_dependency "simplecov", "~> 0.12.0"

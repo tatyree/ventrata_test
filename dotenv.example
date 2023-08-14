@@ -1,1 +1,0 @@
-STRIPE_API_KEY=<Get a test key from https://dashboard.stripe.com/apikeys and save this file as `.env`>

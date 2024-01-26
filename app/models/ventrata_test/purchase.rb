@@ -32,5 +32,5 @@ module VentrataTest
 
       update(payment_intent:)
     end
-    end
   end
+end
